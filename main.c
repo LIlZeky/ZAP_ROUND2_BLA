@@ -14,6 +14,7 @@ int div_by_3(const int num);
 int same_case(const char a, const char b);
 int direction_correction(const int degree);
 int last_positive(const int size, const int array[]);
+void string_to_upper(char string[]);
 
 int main() {
     return 0;
@@ -157,4 +158,14 @@ int is_prime(const int num) {
         }
     }
     return 1;
+}
+
+void string_to_upper(char string[]) {
+    if (string == NULL) {
+        return -1;
+    }
+
+    for (int i = 0; string[i] != '\0'; i++) {
+        string[i] = toupper(string[i]);
+    }
 }
