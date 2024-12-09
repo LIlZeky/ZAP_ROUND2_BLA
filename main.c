@@ -111,13 +111,17 @@ int div_by_3(const int num){
     }
 }
 
-int same_case(const char a, const char b){
-    if((a >= 'A' && a <= 'Z' && b >= 'A' && b <= 'Z') || (a >= 'a' && a <= 'z' && b >= 'a' && b <= 'z')){
-        return 1;
+int same_case(const char a, const char b) {
+    if (!((a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z')) ||
+        !((b >= 'A' && b <= 'Z') || (b >= 'a' && b <= 'z'))) {
+        return -1; 
     }
-    if(!((a >= 'A' && a <= 'Z') || (a >= 'A' && a <= 'Z')) || !((b >= 'a' && b <= 'z') || (b >= 'a' && b <= 'z'))){
-        return -1;
+
+    if ((a >= 'A' && a <= 'Z' && b >= 'A' && b <= 'Z') ||
+        (a >= 'a' && a <= 'z' && b >= 'a' && b <= 'z')) {
+        return 1; 
     }
+
     return 0;
 }
 
@@ -180,4 +184,14 @@ void string_to_upper(char string[]) {
             string[i] = string[i] - ('a' - 'A');
         }
     }
+}
+
+int count_leap_year(const int size, const int array[]) {
+    int count = 0;
+    for (int i = 0; i < size; i++) {
+        if ((array[i] % 4 == 0 && array[i] % 100 != 0) || (array[i] % 400 == 0)) {
+            count++;
+        }
+    }
+    return count;
 }
