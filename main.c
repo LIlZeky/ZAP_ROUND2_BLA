@@ -172,7 +172,6 @@ void string_to_upper(char string[]) {
 
 void string_to_upper(char string[]) {
     if (string == NULL) {
-        // Если строка равна NULL, функция ничего не делает
         return;
     }
     
