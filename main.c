@@ -169,3 +169,16 @@ void string_to_upper(char string[]) {
         string[i] = toupper(string[i]);
     }
 }
+
+void string_to_upper(char string[]) {
+    if (string == NULL) {
+        // Если строка равна NULL, функция ничего не делает
+        return;
+    }
+    
+    for (int i = 0; string[i] != '\0'; i++) {
+        if (string[i] >= 'a' && string[i] <= 'z') {
+            string[i] = string[i] - ('a' - 'A');
+        }
+    }
+}
